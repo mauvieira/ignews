@@ -1,4 +1,5 @@
 import { signIn, useSession } from 'next-auth/react';
+import { api } from '../../services/api';
 import styles from './styles.module.scss';
 
 interface Props {
@@ -10,11 +11,13 @@ export function SubscribeButton({ priceId }: Props) {
 
   const { data: session } = useSession();
 
-  const handleSubscribe = () => {
+  const handleSubscribe = async () => {
     if (!session) {
       signIn('github');
       return;
     }
+
+    await api.post('/subscribe');
 
   }
 
