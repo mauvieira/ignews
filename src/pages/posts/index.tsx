@@ -1,7 +1,6 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { getPrismicClient } from '../../services/prismic';
-import * as prismic from '@prismicio/client'
 import styles from './styles.module.scss';
 
 export default function Posts() {
