@@ -1,9 +1,24 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import { RichText } from 'prismic-dom';
 import { getPrismicClient } from '../../services/prismic';
 import styles from './styles.module.scss';
 
-export default function Posts() {
+type Post = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  updatedAt: string;
+}
+
+interface Props {
+  posts: Post[]
+}
+
+export default function Posts({ posts }: Props) {
+
+  console.log('posts', posts);
+
   return (
     <>
       <Head>
@@ -12,21 +27,13 @@ export default function Posts() {
 
       <main className={styles.container}>
         <div className={styles.content}>
-          <a href='#'>
-            <time>21 de janeiro de 2022</time>
-            <h2>Top 6 React State Management Libraries for 2022</h2>
-            <p>State management is one of the most important aspects of every app. The app’s state dictates what users see, how the app looks, what data is stored, and so on. Thus it’s no wonder that there are so many open-source libraries designed specifically to make state management easier and more enjoyable.</p>
-          </a>
-          <a href='#'>
-            <time>21 de janeiro de 2022</time>
-            <h2>Top 6 React State Management Libraries for 2022</h2>
-            <p>State management is one of the most important aspects of every app. The app’s state dictates what users see, how the app looks, what data is stored, and so on. Thus it’s no wonder that there are so many open-source libraries designed specifically to make state management easier and more enjoyable.</p>
-          </a>
-          <a href='#'>
-            <time>21 de janeiro de 2022</time>
-            <h2>Top 6 React State Management Libraries for 2022</h2>
-            <p>State management is one of the most important aspects of every app. The app’s state dictates what users see, how the app looks, what data is stored, and so on. Thus it’s no wonder that there are so many open-source libraries designed specifically to make state management easier and more enjoyable.</p>
-          </a>
+          {posts.map(({ slug, title, updatedAt, excerpt }) => (
+            <a href={slug} key={slug}>
+              <time>{updatedAt}</time>
+              <h2>{title}</h2>
+              <p>{excerpt}</p>
+            </a>
+          ))}
         </div>
       </main>
     </>
@@ -41,9 +48,20 @@ export const getStaticProps: GetStaticProps = async () => {
 
   console.log(JSON.stringify(response, null, 2));
 
+  const posts = response.map(post => ({
+    slug: post.uid,
+    title: RichText.asText(post.data.title),
+    excerpt: post.data.content[0].text,
+    updatedAt: new Date(post.last_publication_date).toLocaleDateString('en-US', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric'
+    })
+  }));
+
   return {
     props: {
-
+      posts
     }
   }
 }
