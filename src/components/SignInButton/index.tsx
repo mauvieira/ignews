@@ -6,12 +6,14 @@ import styles from './styles.module.scss';
 
 export function SignInButton() {
 
-  const { data: session } = useSession();
+  const { data } = useSession();
 
-  return session ? (
+  console.log('data', data);
+
+  return data ? (
     <button type="button" className={styles.container} onClick={() => signOut()}>
       <FaGithub color="#04d361" />
-      {session.user.name}
+      {data.session.user.name}
       <FiX color="#737380" className={styles.closeIcon} />
     </button>
   ) : (

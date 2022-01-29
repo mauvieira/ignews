@@ -5,8 +5,6 @@ export function getPrismicClient() {
 
   const endpoint = prismic.getEndpoint(repoName);
 
-  console.log('endpoint', endpoint);
-
   const client = prismic.createClient(
     endpoint,
     {
