@@ -19,7 +19,7 @@ export function SubscribeButton() {
     }
 
     if (session.activeSubscription) {
-      router.replace('/posts')
+      router.push('/posts')
       return;
     }
 
