@@ -22,7 +22,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
       q.Get(
         q.Match(
           q.Index('user_by_email'),
-          q.Casefold(session.user.email)
+          q.Casefold(session.session.user.email)
         )
       )
     );
@@ -31,7 +31,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
 
     if (!customerId) {
       const stripeCustomer = await stripe.customers.create({
-        email: session.user.email,
+        email: session.session.user.email,
         // metadata
       });
 

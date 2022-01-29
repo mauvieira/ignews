@@ -8,8 +8,6 @@ export function SignInButton() {
 
   const { data } = useSession();
 
-  console.log('data', data);
-
   return data ? (
     <button type="button" className={styles.container} onClick={() => signOut()}>
       <FaGithub color="#04d361" />
