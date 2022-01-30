@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+    <img alt="Logo ignews" src="https://res.cloudinary.com/dg5pzm35l/image/upload/v1643583984/ignews-logo_wor9my.png" />
+    <br>
 
-## Getting Started
+</h1>
 
-First, run the development server:
+<h4 align="center">
+  An application for you to receive the best news about the React world
+</h4>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<p align="center">
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#ℹ%EF%B8%8F-how-to-use">How To Use</a>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![App Screenshot](https://res.cloudinary.com/dg5pzm35l/image/upload/v1643583984/ignews-screenshot-1_ay2qsr.png)
+![App Screenshot](https://res.cloudinary.com/dg5pzm35l/image/upload/v1643583984/ignews-screenshot-2_m2khix.png)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 🚀 Technologies
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+This project was developed at the [Rocketseat Ignite Bootcamp](https://www.rocketseat.com.br/ignite) with the following technologies:
 
-## Learn More
+-  [React](https://reactjs.org/)
+-  [TypeScript](https://www.typescriptlang.org/)
+-  [Next.js](https://nextjs.org/)
+-  [Stripe](https://stripe.com/en-br)
+-  [Fauna](https://fauna.com/)
+-  [Prismic](https://prismic.io/)
+-  [sass](https://sass-lang.com/)
+-  [axios](https://github.com/axios/axios)
+-  [VS Code](https://code.visualstudio.com/)
 
-To learn more about Next.js, take a look at the following resources:
+## ℹ️ How to use
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v14.18](https://nodejs.org/en/) or higher + [Yarn v1.22](https://yarnpkg.com/) or higher installed on your computer. From your command line:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  ```bash
+  # Clone this repository
+  $ git clone https://github.com/vieiramauricio/ignews
 
-## Deploy on Vercel
+  # Go into the repository
+  $ cd ignews
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  # Add environment variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  # Install dependencies
+  $ yarn install
+
+  # Run the app
+  $ yarn start
+  ```
+
+Made with 💛 by Mauricio Vieira 👋🏼 [Get in touch!](https://www.linkedin.com/in/vieira-mauricio/)
