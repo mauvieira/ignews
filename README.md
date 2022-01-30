@@ -24,6 +24,7 @@ This project was developed at the [Rocketseat Ignite Bootcamp](https://www.rocke
 -  [React](https://reactjs.org/)
 -  [TypeScript](https://www.typescriptlang.org/)
 -  [Next.js](https://nextjs.org/)
+-  [NextAuth](https://next-auth.js.org/)
 -  [Stripe](https://stripe.com/en-br)
 -  [Fauna](https://fauna.com/)
 -  [Prismic](https://prismic.io/)
