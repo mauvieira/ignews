@@ -43,7 +43,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
   const { slug } = params;
 
   if (!session?.activeSubscription) {
-    console.log('caiu aqui! sem inscricao')
     return {
       redirect: {
         destination: `/posts/preview/${slug}`,
