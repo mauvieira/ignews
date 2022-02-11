@@ -28,7 +28,7 @@ export default function Posts({ posts }: Props) {
       <main className={styles.container}>
         <div className={styles.content}>
           {posts.map(({ slug, title, updatedAt, excerpt }) => (
-            <Link href={`/posts/preview/${slug}`}>
+            <Link href={`/posts/${slug}`}>
               <a key={slug}>
                 <time>{updatedAt}</time>
                 <h2>{title}</h2>
